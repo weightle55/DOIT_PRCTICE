@@ -54,8 +54,14 @@ footer > a.instar:hover{background:url(../images/social_b_instar_hover.png) no-r
 
 #container{width:100%; height:100%; position:relative; max-width: 1200px; margin:0 auto;}
 #container .content{width:25%; height:100%; position:absolute; transition: all .5s;}
+/* this가 container에 붙을 떄 width를 지정해준다. */
+#container .content.this .conbox{max-width:1100px; margin:0 auto;}
+
 /* this를 전체로 하고 prev, next를 화면 밖으로 설정 */
-#container .content.this {width:100%; left:0 !important;}
+#container .content.this {width:100%; left:0 !important;
+/* overflow-y를 생성해 콘텐츠 스크롤을 가능하게 한다. */
+height:100%; overflow: hidden; overflow-y:auto;
+}
 #container .content.prev {width:100%; left:-100% !important;}
 #container .content.next {width:100%; left:100% !important;}
 /* 이전에 꾸밈 요소로 가상 속성을 사용해 만든 텍스트와 이미지를 숨김 처리한다. */
@@ -99,6 +105,11 @@ position:relative; background:#fff; font-size:28px; font-weight: 400; opacity:1;
 #container .content:nth-of-type(3) {transition-delay: .6s;}
 #container .content:nth-of-type(4) {transition-delay: .8s;}
 #container.start .content{top:0;}
+
+.pargrph_tit{margin-bottom:50px; font-size:24px; color:#fff;position:relative;}
+.pargrph_tit:after{content:""; display:block; width:30px; height:8px; background:#ed3140; position:absolute; left:0; bottom:-10px;}
+.text_box h4 {font-size:40px; color:#d6d4d4; font-weight:700;}
+.text_box p{margin-bottom:50px; color:#ababab; line-height:20px;}
 
 
 
