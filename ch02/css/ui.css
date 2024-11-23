@@ -65,9 +65,10 @@ height:100%; overflow: hidden; overflow-y:auto;
 #container .content.prev {width:100%; left:-100% !important;}
 #container .content.next {width:100%; left:100% !important;}
 /* 이전에 꾸밈 요소로 가상 속성을 사용해 만든 텍스트와 이미지를 숨김 처리한다. */
-#container .content.this::before, #container .content.this::after,
-#conteiner .content.this .conbox:before, #container .content.prev::before,
-#container .content.prev:after, #container .content.prev .conbox:before, #container .content.next:before, #container .content.next::after, #container .content.next .conbox::before{opacity:0; transition: all .6s; transition: delay 0.3s;}
+#container .content.this::before, #container .content.this::after,#container .content.this .conbox::before, #container .content.prev::before,
+#container .content.prev:after, #container .content.prev .conbox:before, #container .content.next:before, 
+#container .content.next::after, #container .content.next .conbox::before{opacity:0; transition: all .6s; transition-delay: .3s;}
+
 /* transform 으로 -300 만큼 이동시킨다. */
 #container .content.this .conbox:before { transform: translate3d(-300px, 0, 0);}
 #container .content.this:after{transform:translate3d(-300px, 0,0);}
@@ -86,10 +87,10 @@ height:100%; overflow: hidden; overflow-y:auto;
 #container #menu4::after{content:"Contact Us";}
 #container .content .conbox::before{content:""; display:block; position:absolute;}
 
-#container #menu1 .conbox::before{background:url(../images/main_ico1.png) no-repeat; width:350px; height: 260px; right:-10px; top:130px; background-size: 100%;}
-#container #menu2 .conbox::before{background:url(../images/main_ico2.png) no-repeat; width:180px; height: 470px; right:-30px; top:180px; background-size: 100%;}
-#container #menu3 .conbox::before{background:url(../images/main_ico3.png) no-repeat; width:270px; height: 310px; right:-60px; top:30px; background-size: 100%;}
-#container #menu4 .conbox::before{background:url(../images/main_ico4.png) no-repeat; width:350px; height: 400px; right:-170px; top:100px; background-size: 100%;}
+#container #menu1 .conbox:before{background:url(../images/main_ico1.png) no-repeat; width:350px; height: 260px; right:-10px; top:130px; background-size: 100%;}
+#container #menu2 .conbox:before{background:url(../images/main_ico2.png) no-repeat; width:180px; height: 470px; right:-30px; top:180px; background-size: 100%;}
+#container #menu3 .conbox:before{background:url(../images/main_ico3.png) no-repeat; width:270px; height: 310px; right:-60px; top:30px; background-size: 100%;}
+#container #menu4 .conbox:before{background:url(../images/main_ico4.png) no-repeat; width:350px; height: 400px; right:-170px; top:100px; background-size: 100%;}
 
 #container .content h2{opacity: 0;}
 #container .content.this h2{height:auto; padding:30px 0 20px 50px; color:#000;
@@ -124,9 +125,24 @@ transition:all 1.7s; transition-delay: .8s;
 .text_box:nth-last-child(1)::after {content:""; display:block; width:170px; height:280px; position:absolute; right:0; top:-20px; background:url(../images/content_img3.png) no-repeat right top; background-size:170px; }
 .text_box:nth-last-child(1) p{padding:0 200px 0 280px;}
 
+#menu2.content h3{font-size:0px;}
+#menu2.content.this .conbox{background:url(../images/bookbg.png) no-repeat -15px 360px; max-width:100%}
+.notebook{width:954px; height:650px; margin:100px auto 0 auto; background:url(../images/mackbook.png) no-repeat; background-size:954px; position:relative;}
+.detail_content{width:719px; height:453px; position:absolute; left:117px; top:38px; padding: 30px 0;}
+.img_book{width: 270px; float:left;}
+.img_book img{width:270px;}
+.book_description{width: 449px; float:left; padding:20px 20px 20px 40px;}
+.detail_content::after{content:""; display: block; clear:both;}
+.book_description h4{font-size : 31px; font-weight: 700; color: #f92d68; line-height:31px; }
+.book_description ul li em {font-weight:700;}
+.point_text {padding:10px 30px 0px 0; font-size:12px; color:#666;}
+.point_text strong {display:block; padding:0 0 10px 46px; background:url(../images/point_bg.png) no-repeat; background-size:40px; font-size:14px; font-weight:700; color:#3c4147;}
 
+/* bullet은 자주 사용되므로 공통화해서 쓰는 것이 좋다. */
+.bullet_list{margin-top:20px;}
+.bullet_list li{margin-bottom:5px; padding-left:10px; font-size:12px; color:#3c4147; position:relative;}
+.bullet_list li:after{content:""; display:block; width:3px; height:3px; border-radius: 50%; background:#3c4147; position:absolute; left:0; top:8px;}
 
-
-
-
-
+/* 버튼도 마찬가지로 공통화하는 것이 좋다. */
+.commbtn { width: 150px; display:inline-block; height:35px; margin-top:20px; font-size:15px; line-height:35px; border-radius: 5px; text-align: center;}
+.commbtn.pink {background: #f92d68; color: #fff;}
