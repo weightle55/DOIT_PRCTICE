@@ -138,6 +138,16 @@ transition:all 1.7s; transition-delay: .8s;
 .point_text {padding:10px 30px 0px 0; font-size:12px; color:#666;}
 .point_text strong {display:block; padding:0 0 10px 46px; background:url(../images/point_bg.png) no-repeat; background-size:40px; font-size:14px; font-weight:700; color:#3c4147;}
 
+/* 롤링배너 */
+.book_rollwrap {width: 954px; height: 150px; margin:40px auto 0 auto; padding:0 20px; position:relative;}
+.book_rollwrap > button {display:block; position:absolute; width:20px; height:100%; top:0;}
+.book_rollwrap > button.roll_left {background:url(../images/btn_left.png) no-repeat center center; background-size: 20px; left:0;}
+.book_rollwrap > button.roll_right {background:url(../images/btn_right.png) no-repeat center center; background-size: 20px; right:0;}
+.book_rollwrap .book_roll {width: 100%; height: 100%; overflow:hidden; }
+.book_rollwrap .book_roll ul {width: 100%; }
+.book_rollwrap .book_roll ul li {float:left; width: 152px; text-align: center;}
+.book_rollwrap .book_roll ul li img { width: 100px; }
+
 /* bullet은 자주 사용되므로 공통화해서 쓰는 것이 좋다. */
 .bullet_list{margin-top:20px;}
 .bullet_list li{margin-bottom:5px; padding-left:10px; font-size:12px; color:#3c4147; position:relative;}
