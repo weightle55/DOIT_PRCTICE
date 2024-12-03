@@ -127,7 +127,10 @@ transition:all 1.7s; transition-delay: .8s;
 
 #menu2.content h3{font-size:0px;}
 #menu2.content.this .conbox{background:url(../images/bookbg.png) no-repeat -15px 360px; max-width:100%}
-.notebook{width:954px; height:650px; margin:100px auto 0 auto; background:url(../images/mackbook.png) no-repeat; background-size:954px; position:relative;}
+/* 3d animation */
+.notebook{width:954px; height:650px; margin:100px auto 0 auto; background:url(../images/mackbook.png) no-repeat; background-size:954px; position:relative; transform-style: preserve_3d; transform:matrix3d(1,0,0,0,0,0.1,0,0,0,0,1,0,0,0,0,1); transition: all ease-in-out 0.6s; transition-delay:.8s; opacity: 0;}
+#menu2.this .notebook{transform:matrix3d(1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1); opacity: 1;}
+
 .detail_content{width:719px; height:453px; position:absolute; left:117px; top:38px; padding: 30px 0;}
 .img_book{width: 270px; float:left;}
 .img_book img{width:270px;}
@@ -147,6 +150,9 @@ transition:all 1.7s; transition-delay: .8s;
 .book_rollwrap .book_roll ul {width: 100%; }
 .book_rollwrap .book_roll ul li {float:left; width: 152px; text-align: center;}
 .book_rollwrap .book_roll ul li img { width: 100px; }
+
+.book_roll li:before{content: attr(data-url)}
+.book_roll li[data-url] {color:#fff}
 
 /* bullet은 자주 사용되므로 공통화해서 쓰는 것이 좋다. */
 .bullet_list{margin-top:20px;}
